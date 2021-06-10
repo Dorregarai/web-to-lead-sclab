@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import BrandBand from "@salesforce/design-system-react/components/brand-band";
-import Address from "./Components/Address";
+import BrandBand from '@salesforce/design-system-react/components/brand-band';
+import Address from './Components/Address';
+import Customer from './Components/Customer'
 
 class App extends Component {
   render() {
@@ -8,6 +9,7 @@ class App extends Component {
         <div>
           <BrandBand className="slds-align_absolute-center">
             <Address />
+            <Customer isActive={true} />
           </BrandBand>
         </div>
     );
