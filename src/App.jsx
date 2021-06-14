@@ -10,7 +10,7 @@ export default function App() {
   const [ isCheckActive, setIsCheckActive ] = useState(false);
   const [ data, setData ] = useState({});
 
-  return (                                                                // TODO: ReCaptcha
+  return (                                                                // TODO: ReCaptcha: siteKey - 6LcGDDIbAAAAAEHRCjpapH9KRAUDOlx89qVhE4E5
       <div>
         <BrandBand className="slds-align_absolute-center">
           <Customer

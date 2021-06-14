@@ -1,15 +1,37 @@
-import React from "react";
+import React, {useState} from "react";
 import Button from "@salesforce/design-system-react/components/button";
+import Toast from "@salesforce/design-system-react/components/toast";
+import ToastContainer from "@salesforce/design-system-react/components/toast/container";
+import ReCAPTCHA from "react-recaptcha";
 
 export default function Check(props) {
+    const [ isVerified, setIsVerified ] = useState(false);
 
     const handlePrevClick = () => {
         props.setIsCheckActive(false);
         props.setIsAddressActive(true);
     }
 
+    let toast;
+
     const handleFinishClick = () => {
-        document.getElementById('form').submit();
+        if(isVerified) {
+            document.getElementById('form').submit();
+            toast = '';
+        } else {
+            toast =
+                <ToastContainer>
+                    <Toast variant="error" labels={{heading: "I guess you are a robot? Check reCAPTCHA please"}} />
+                </ToastContainer>
+        }
+    }
+
+    const onReCaptchaLoad = () => {
+        console.log('captcha loaded!');
+    }
+
+    const verifyCallback = () => {
+        setIsVerified(true);
     }
 
     if(props.isCheckActive) {
@@ -72,6 +94,15 @@ export default function Check(props) {
                         <Button label="Submit" variant="brand" onClick={handleFinishClick} />
                     </div>
                 </div>
+                
+                <ReCAPTCHA
+                    sitekey="6LcGDDIbAAAAAEHRCjpapH9KRAUDOlx89qVhE4E5"
+                    render="explicit"
+                    onloadCallback={onReCaptchaLoad}
+                    verifyCallback={verifyCallback}
+                />
+
+                {toast}
 
                 <div style={{"display": "none"}}>
                         <form id="form" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
@@ -99,7 +130,7 @@ export default function Check(props) {
 
                             <input value={props.data.bCity} id="city" maxLength="40" name="city" size="20" type="text" />
 
-                            <textarea value={props.data.bStreet} name="street"></textarea>
+                            <textarea value={props.data.bStreet} name="street" />
 
                         </form>
                     </div>
@@ -107,6 +138,6 @@ export default function Check(props) {
             </div>
         )
     } else {
-        return(<div></div>)
+        return(<div/>)
     }
 }
