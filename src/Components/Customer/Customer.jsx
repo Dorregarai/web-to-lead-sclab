@@ -61,7 +61,7 @@ export default function Customer(props) {
                                 }
                             }}
                             formatter={(date) => {
-                                return date ? moment(date).format('YYYY-MM-DD') : '';
+                                return date ? moment(date).format('MM-DD-YYYY') : '';
                             }} 
                             parser={(dateString) => {
                                 return moment(dateString, 'MM-DD-YYYY').toDate();
