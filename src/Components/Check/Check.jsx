@@ -1,16 +1,15 @@
 import React from "react";
 import Button from "@salesforce/design-system-react/components/button";
-import ActionForm from '../ActionForm';
 
 export default function Check(props) {
+
     const handlePrevClick = () => {
         props.setIsCheckActive(false);
         props.setIsAddressActive(true);
     }
 
     const handleFinishClick = () => {
-        //  https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8
-        console.log(props.data);
+        document.getElementById('form').submit();
     }
 
     if(props.isCheckActive) {
@@ -74,7 +73,36 @@ export default function Check(props) {
                     </div>
                 </div>
 
-                <ActionForm data={props.data} />
+                <div style={{"display": "none"}}>
+                        <form id="form" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+
+                            <input type="hidden" name="oid" value="00D5g000005IJxW" />
+                            <input type="hidden" name="retURL" value="https://webtolead-dev-ed.lightning.force.com/lightning/page/home" />
+
+                            <input value={props.data.cName} id="company" maxLength="40" name="company" size="20" type="text" />
+
+                            <input value={props.data.cSite} id="url" maxLength="80" name="url" size="20" type="text" />
+
+                            <input value={props.data.fName} id="first_name" maxLength="40" name="first_name" size="20" type="text" />
+
+                            <input value={props.data.lName} id="last_name" maxLength="80" name="last_name" size="20" type="text" />
+
+                            <input value={props.data.Birthday} id="00N5g00000DsdjE" name="00N5g00000DsdjE" size="12" type="text" />
+
+                            <input value={props.data.Email} id="email" maxLength="80" name="email" size="20" type="text" />
+
+                            <input value={props.data.bCountry} id="country" maxLength="40" name="country" size="20" type="text" />
+
+                            <input value={props.data.bState} id="state" maxLength="20" name="state" size="20" type="text" />
+
+                            <input value={props.data.bZip} id="zip" maxLength="20" name="zip" size="20" type="text" />
+
+                            <input value={props.data.bCity} id="city" maxLength="40" name="city" size="20" type="text" />
+
+                            <textarea value={props.data.bStreet} name="street"></textarea>
+
+                        </form>
+                    </div>
 
             </div>
         )
