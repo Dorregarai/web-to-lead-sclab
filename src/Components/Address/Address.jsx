@@ -48,7 +48,7 @@ export default function Address(props) {
                     <form onSubmit={handleNextClick}>
                         <Input label="Billing Country" defaultValue={props.data.bCountry} required onChange={handleBCountryChange} />
                         <Input label="Billing State / Province" defaultValue={props.data.bState} required onChange={handleBStateChange} />
-                        <Input label="Billing Zip / Postal Code" defaultValue={props.data.bZip} required onChange={handleBZipChange} />
+                        <Input label="Billing Zip / Postal Code" defaultValue={props.data.bZip} type="number " required onChange={handleBZipChange} />
                         <Input label="Billing City" defaultValue={props.data.bCity} required onChange={handleBCityChange} />
                         <Input label="Billing Street" defaultValue={props.data.bStreet} required onChange={handleBStreetChange} />
                         <Checkbox
