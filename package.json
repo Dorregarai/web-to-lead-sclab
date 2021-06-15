@@ -17,7 +17,7 @@
   "scripts": {
     "__comment": "use this -> serve -s build <- when deploy",
     "__comment2": "use this -> react-app-rewired start <- when dev",
-    "start": "react-app-rewired start",
+    "start": "serve -s build",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject --env=jsdom"
