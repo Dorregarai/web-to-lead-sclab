@@ -42,50 +42,76 @@ export default function Check(props) {
 
                     <table>
                         <tbody>
-                        <tr>
-                            <td>Company name</td>
-                            <td>{props.data.cName}</td>
-                        </tr>
-                        <tr>
-                            <td>Company site</td>
-                            <td>{props.data.cSite}</td>
-                        </tr>
-                        <tr>
-                            <td>First name</td>
-                            <td>{props.data.fName}</td>
-                        </tr>
-                        <tr>
-                            <td>Last name</td>
-                            <td>{props.data.lName}</td>
-                        </tr>
-                        <tr>
-                            <td>Birthday</td>
-                            <td>{props.data.Birthday}</td>
-                        </tr>
-                        <tr>
-                            <td>Email</td>
-                            <td>{props.data.Email}</td>
-                        </tr>
-                        <tr>
-                            <td>Billing Country</td>
-                            <td>{props.data.bCountry}</td>
-                        </tr>
-                        <tr>
-                            <td>Billing State / Province</td>
-                            <td>{props.data.bState}</td>
-                        </tr>
-                        <tr>
-                            <td>Billing Zip / Postal Code</td>
-                            <td>{props.data.bZip}</td>
-                        </tr>
-                        <tr>
-                            <td>Billing City</td>
-                            <td>{props.data.bCity}</td>
-                        </tr>
-                        <tr>
-                            <td>Billing Street</td>
-                            <td>{props.data.bStreet}</td>
-                        </tr>
+                            <tr>
+                                <td>Company name</td>
+                                <td>{props.data.cName}</td>
+                            </tr>
+                            <tr>
+                                <td>Company site</td>
+                                <td>{props.data.cSite}</td>
+                            </tr>
+                            <tr>
+                                <td>First name</td>
+                                <td>{props.data.fName}</td>
+                            </tr>
+                            <tr>
+                                <td>Last name</td>
+                                <td>{props.data.lName}</td>
+                            </tr>
+                            <tr>
+                                <td>Birthday</td>
+                                <td>{props.data.Birthday}</td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>{props.data.Email}</td>
+                            </tr>
+
+                            <br />
+
+                            <tr>
+                                <td>Billing Country</td>
+                                <td>{props.data.bCountry}</td>
+                            </tr>
+                            <tr>
+                                <td>Billing State / Province</td>
+                                <td>{props.data.bState}</td>
+                            </tr>
+                            <tr>
+                                <td>Billing Zip / Postal Code</td>
+                                <td>{props.data.bZip}</td>
+                            </tr>
+                            <tr>
+                                <td>Billing City</td>
+                                <td>{props.data.bCity}</td>
+                            </tr>
+                            <tr>
+                                <td>Billing Street</td>
+                                <td>{props.data.bStreet}</td>
+                            </tr>
+
+                            <br />
+
+                            <tr>
+                                <td>Shipping Country</td>
+                                <td>{props.data.sCountry}</td>
+                            </tr>
+                            <tr>
+                                <td>Shipping State / Province</td>
+                                <td>{props.data.sState}</td>
+                            </tr>
+                            <tr>
+                                <td>Shipping Zip / Postal Code</td>
+                                <td>{props.data.sZip}</td>
+                            </tr>
+                            <tr>
+                                <td>Shipping City</td>
+                                <td>{props.data.sCity}</td>
+                            </tr>
+                            <tr>
+                                <td>Shipping Street</td>
+                                <td>{props.data.sStreet}</td>
+                            </tr>
                         </tbody>
                     </table>
 
@@ -131,6 +157,17 @@ export default function Check(props) {
                             <input value={props.data.bCity} id="city" maxLength="40" name="city" size="20" type="text" />
 
                             <textarea value={props.data.bStreet} name="street" />
+
+
+                            <input value={props.data.sCountry} id="00N5g00000DtAfk" maxLength="50" name="00N5g00000DtAfk" size="20" type="text" />
+
+                            <input value={props.data.sState} id="00N5g00000DtAfp" maxLength="50" name="00N5g00000DtAfp" size="20" type="text" />
+
+                            <input value={props.data.sZip} id="00N5g00000DtAfu" maxLength="50" name="00N5g00000DtAfu" size="20" type="text" />
+
+                            <input value={props.data.sCity} id="00N5g00000DtAfv" maxLength="50" name="00N5g00000DtAfv" size="20" type="text" />
+
+                            <input value={props.data.sStreet} id="00N5g00000DtAg4" maxLength="50" name="00N5g00000DtAg4" size="20" type="text" />
 
                         </form>
                     </div>
