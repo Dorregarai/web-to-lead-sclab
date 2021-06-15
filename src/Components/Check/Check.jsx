@@ -21,7 +21,7 @@ export default function Check(props) {
         } else {
             toast =
                 <ToastContainer>
-                    <Toast variant="error" labels={{heading: "I guess you are a robot? Check reCAPTCHA please"}} />
+                    <Toast variant="error" labels={{heading: "I guess you are robot? Check reCAPTCHA please"}} />
                 </ToastContainer>
         }
     }
@@ -96,7 +96,7 @@ export default function Check(props) {
                 </div>
                 
                 <ReCAPTCHA
-                    sitekey="6LcGDDIbAAAAAEHRCjpapH9KRAUDOlx89qVhE4E5"
+                    sitekey="6Le0RjQbAAAAAF_IZUVNv8rytwwGQ8atg4D-aHWX"
                     render="explicit"
                     onloadCallback={onReCaptchaLoad}
                     verifyCallback={verifyCallback}

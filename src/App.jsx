@@ -9,9 +9,9 @@ export default function App() {
   const [ isAddressActive, setIsAddressActive ] = useState(false);
   const [ isCheckActive, setIsCheckActive ] = useState(false);
   const [ data, setData ] = useState({});
-
+                                                                          //                  secretKey - 6Le0RjQbAAAAABRwHd381YeR3JE4yppQQ--EjD5F
   return (                                                                // TODO: ReCaptcha: siteKey - 6LcGDDIbAAAAAEHRCjpapH9KRAUDOlx89qVhE4E5
-      <div>
+    <div>
         <BrandBand className="slds-align_absolute-center">
           <Customer
             isCustomerActive={isCustomerActive}

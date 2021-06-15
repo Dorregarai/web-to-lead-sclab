@@ -24,7 +24,7 @@ export default function Customer(props) {
         props.setData({ ...props.data, 'lName': event.target.value });
     }
     
-    const handleBirthdayChange = (data) => {
+    const handleBirthdayChange = (event, data) => {
         props.setData({ ...props.data, 'Birthday': data.formattedDate });
     }
 
@@ -59,7 +59,7 @@ export default function Customer(props) {
                         
                         <Datepicker
                             label="Birthday" required
-                            onBlur={(event, data) => {
+                            onChange={(event, data) => {
                                 handleBirthdayChange(event, data);
 
                                 if (props.action) {
