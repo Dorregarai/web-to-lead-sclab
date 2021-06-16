@@ -53,7 +53,7 @@ export default function Customer(props) {
                     <h3 className="slds-text-heading_large slds-truncate slds-p-bottom--large">Customer Information</h3>
                     <form onSubmit={handleNextClick}>
                         <Input label="Company name" defaultValue={props.data.cName} required onBlur={handleNameChange} />
-                        <Input label="Company site" defaultValue={props.data.cSite} type="url" onBlur={handleSiteChange} />
+                        <Input label="Company site" defaultValue={props.data.cSite} onBlur={handleSiteChange} />
                         <Input label="First name" defaultValue={props.data.fName} required onBlur={handleFNameChange} />
                         <Input label="Last name" defaultValue={props.data.lName} required onBlur={handleLNameChange} />
                         

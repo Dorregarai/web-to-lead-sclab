@@ -8,7 +8,8 @@ export default function App() {
   const [ isCustomerActive, setIsCustomerActive ] = useState(true);
   const [ isAddressActive, setIsAddressActive ] = useState(false);
   const [ isCheckActive, setIsCheckActive ] = useState(false);
-  const [ data, setData ] = useState({});
+
+  const [ data, setData ] = useState({ Birthday: new Date().toLocaleString().substring(0, 9) });
   
   return (
     <div>

@@ -1,7 +1,5 @@
 import React, {useState} from "react";
 import Button from "@salesforce/design-system-react/components/button";
-import Toast from "@salesforce/design-system-react/components/toast";
-import ToastContainer from "@salesforce/design-system-react/components/toast/container";
 import ReCAPTCHA from "react-recaptcha";
 
 export default function Check(props) {
@@ -12,17 +10,11 @@ export default function Check(props) {
         props.setIsAddressActive(true);
     }
 
-    let toast;
-
     const handleFinishClick = () => {
         if(isVerified) {
             document.getElementById('form').submit();
-            toast = '';
         } else {
-            toast =
-                <ToastContainer>
-                    <Toast variant="error" labels={{heading: "I guess you are robot? Check reCAPTCHA please"}} />
-                </ToastContainer>
+            alert('I guess you are robot? Check reCAPTCHA please');
         }
     }
 
@@ -127,8 +119,6 @@ export default function Check(props) {
                     onloadCallback={onReCaptchaLoad}
                     verifyCallback={verifyCallback}
                 />
-
-                {toast}
 
                 <div style={{"display": "none"}}>
                         <form id="form" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
